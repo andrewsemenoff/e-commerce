@@ -8,6 +8,8 @@ import QuickShopSlider from "./components/QuickShopSlider/QuickShopSlider.compon
 import SubscribeBar from "./components/SubscribeBar/SubscribeBar.component";
 import Returns from "./components/Returns/Returns.component";
 import SignIn from "./components/SignIn/SignIn.component";
+import SignUp from "./components/SignIn/SignUp.component";
+import RestorePass from "./components/SignIn/RestorePass.component";
 
 
 const theme = createTheme({
@@ -27,7 +29,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <div>
         <NavigationBar />
+        <SignUp/>
         <SignIn/>
+        <RestorePass/>
         <Returns/>
         <QuickShopSlider />
         <LandingPageContent />

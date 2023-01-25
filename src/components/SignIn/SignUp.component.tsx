@@ -3,26 +3,31 @@ import TextField from "@mui/material/TextField";
 import React, { useState } from "react";
 import { ButtonTypes } from "../CustomButton/CustomButton.component";
 import {
-    HorizontalBox,
-    MyLink,
-    Paragraph,
-    SignBox,
-    StyledForm,
-    SubmitBtn,
+  HighlightedText,
+  HorizontalBox,
+  MyLink,
+  Paragraph,
+  SignBox,
+  StyledForm,
+  SubmitBtn,
 } from "./SignIn.style";
 
 const theme = createTheme();
 
-const SignIn = () => {
+const SignUp = () => {
+  const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [pass, setPass] = useState("");
+  const [passConfirmation, setPassConfirmation] = useState("");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
+      userName: data.get("name"),
       email: data.get("email"),
       password: data.get("password"),
+      passConfirmation: data.get("confirmation"),
     });
   };
   const handlePassChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,23 +36,39 @@ const SignIn = () => {
   const handleMailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMail(event.target.value);
   };
+  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value);
+  };
+  const handlePassConfirmationChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setPassConfirmation(event.target.value);
+  };
   return (
     <ThemeProvider theme={theme}>
       <SignBox>
         <HorizontalBox>
-          <h3>Sign in</h3>
+          <h3>Sign up</h3>
           <Paragraph>
-            {"Don't have an account?"}&nbsp;
-            <MyLink to="/">{"Sign Up"}</MyLink>
+            Already have an account? <MyLink to="/">Sign in</MyLink>
           </Paragraph>
         </HorizontalBox>
         <StyledForm onSubmit={handleSubmit}>
+          <TextField
+            value={name}
+            margin="normal"
+            required
+            fullWidth
+            label="Name"
+            name="name"
+            autoFocus
+            onChange={handleNameChange}
+          />
           <TextField
             value={mail}
             margin="normal"
             required
             fullWidth
-            id="email"
             label="Email Address"
             name="email"
             autoComplete="email"
@@ -62,19 +83,32 @@ const SignIn = () => {
             name="password"
             label="Password"
             type="password"
-            id="password"
             autoComplete="current-password"
             onChange={handlePassChange}
           />
+
+          <TextField
+            value={passConfirmation}
+            margin="normal"
+            required
+            fullWidth
+            name="confirmation"
+            label="Confirm password"
+            type="password"
+            autoComplete="current-password"
+            onChange={handlePassConfirmationChange}
+          />
           <SubmitBtn isFullWidth type="submit" buttonType={ButtonTypes.BLUE}>
-            Login
+            Sign up
           </SubmitBtn>
-          <HorizontalBox align="center">
-            <MyLink to="/">Lost your password?</MyLink>
-          </HorizontalBox>
+          <Paragraph>
+            By signing in to your account you agree with our
+            <MyLink to="/">Privacy Policy</MyLink>&nbsp;&nbsp;and&nbsp;&nbsp;
+            <MyLink to="/">Terms of Use.</MyLink>
+          </Paragraph>
         </StyledForm>
       </SignBox>
     </ThemeProvider>
   );
 };
-export default SignIn;
+export default SignUp;
