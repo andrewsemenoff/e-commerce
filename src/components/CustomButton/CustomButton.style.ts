@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const BaseButton = styled.button`
+export const BaseButton = styled.button<{isFullWidth: boolean}>`
   pointer-events: ${(props) => (props.disabled ? "none" : null)};
   padding: 0.4em;
   height: fit-content;
-  width: fit-content;
+  width: ${(props)=>(props.isFullWidth ? '100%': 'fit-content')};
   font-size: 1em;
   decoration: none;
   border: none;

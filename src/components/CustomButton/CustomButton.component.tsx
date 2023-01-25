@@ -1,11 +1,23 @@
 import React from "react";
-import { AddToCartButton, BaseButton, BlackButton, BlueButton } from "./CustomButton.style";
+import {
+  AddToCartButton,
+  BaseButton,
+  BlackButton,
+  BlueButton,
+} from "./CustomButton.style";
 
 export enum ButtonTypes {
   BASE = "base",
   BLACK = "black",
   BLUE = "blue",
-  ADD = 'add',
+  ADD = "add",
+}
+
+interface ButtonProps {
+  children: any;
+  buttonType?: ButtonTypes;
+  type?: "button" | "submit" | "reset" | undefined;
+  isFullWidth?: boolean;
 }
 
 const getButton = (buttonType: ButtonTypes = ButtonTypes.BASE) =>
@@ -16,9 +28,19 @@ const getButton = (buttonType: ButtonTypes = ButtonTypes.BASE) =>
     [ButtonTypes.ADD]: AddToCartButton,
   }[buttonType]);
 
-const CustomButton = ({ children, buttonType, ...otherProps }: {children: any, buttonType?: ButtonTypes}) => {
+const CustomButton: React.FC<ButtonProps> = ({
+  children,
+  isFullWidth=false,
+  type,
+  buttonType,
+  ...otherProps
+}) => {
   const StyledButton = getButton(buttonType);
-  return <StyledButton {...otherProps}>{children}</StyledButton>;
+  return (
+    <StyledButton isFullWidth={isFullWidth} type={type} {...otherProps}>
+      {children}
+    </StyledButton>
+  );
 };
 
 export default CustomButton;

@@ -7,6 +7,7 @@ import NavigationBar from "./components/NavigationBar/NavigationBar.component";
 import QuickShopSlider from "./components/QuickShopSlider/QuickShopSlider.component";
 import SubscribeBar from "./components/SubscribeBar/SubscribeBar.component";
 import Returns from "./components/Returns/Returns.component";
+import SignIn from "./components/SignIn/SignIn.component";
 
 
 const theme = createTheme({
@@ -26,6 +27,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div>
         <NavigationBar />
+        <SignIn/>
         <Returns/>
         <QuickShopSlider />
         <LandingPageContent />

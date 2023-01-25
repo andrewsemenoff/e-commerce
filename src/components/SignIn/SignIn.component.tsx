@@ -1,0 +1,76 @@
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import TextField from "@mui/material/TextField";
+import React, { useState } from "react";
+import { ButtonTypes } from "../CustomButton/CustomButton.component";
+import {
+  HorizontalBox,
+  MyLink,
+  SignBox,
+  StyledForm,
+  SubmitBtn,
+} from "./SignIn.style";
+
+const theme = createTheme();
+
+const SignIn = () => {
+  const [mail, setMail] = useState("");
+  const [pass, setPass] = useState("");
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get("email"),
+      password: data.get("password"),
+    });
+  };
+  const handlePassChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPass(event.target.value);
+  };
+  const handleMailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setMail(event.target.value);
+  };
+  return (
+    <ThemeProvider theme={theme}>
+      <SignBox>
+        <HorizontalBox>
+          <h3>Sign in</h3>
+          <MyLink to="/">{"Don't have an account? Sign Up"}</MyLink>
+        </HorizontalBox>
+        <StyledForm onSubmit={handleSubmit}>
+          <TextField
+            value={mail}
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            onChange={handleMailChange}
+          />
+          <TextField
+            value={pass}
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            onChange={handlePassChange}
+          />
+          <SubmitBtn isFullWidth type="submit" buttonType={ButtonTypes.BLUE}>
+            Sign In
+          </SubmitBtn>
+          <HorizontalBox align="center">
+            <MyLink to="/">Forgot password?</MyLink>
+          </HorizontalBox>
+        </StyledForm>
+      </SignBox>
+    </ThemeProvider>
+  );
+};
+export default SignIn;
