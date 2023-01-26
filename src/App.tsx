@@ -33,7 +33,6 @@ function App() {
           <Route path="/returns" element={<Returns />} />
           <Route path="/landing" element={<LandingPageContent />} />
         </Routes>
-        <SubscribeBar />
         <Footer />
       </div>
     </ThemeProvider>

@@ -3,16 +3,21 @@ import React, { useState } from "react";
 import {
   CartBadge,
   CartIcon,
+  LogoIcon,
   Magnifier,
   NavBar,
   NavMenu,
   ProfileIcon,
+  StyledLink,
 } from "./NavigationBar.style";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const menuItems = ["Men", "Women", "Kids", "Sale", "Collections", "Blog"];
 const NavigationBar = () => {
   const [searchValue, setSearchValue] = useState("");
   const [count, setCount] = useState(1);
+  const navigate = useNavigate();
   const searchedTextChangeHandler = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -20,7 +25,9 @@ const NavigationBar = () => {
   };
   return (
     <NavBar>
-      <h2>LOGO</h2>
+      <StyledLink to='/landing'>
+        <LogoIcon>LOGO</LogoIcon>
+      </StyledLink>
       <NavMenu>
         {menuItems.map((item, index) => (
           <MenuItem key={index}>{item}</MenuItem>
@@ -40,7 +47,7 @@ const NavigationBar = () => {
         }}
       />
       <CartBadge badgeContent={count}>
-        <CartIcon/>
+        <CartIcon />
       </CartBadge>
       <ProfileIcon />
     </NavBar>

@@ -4,6 +4,8 @@ import styled, { css } from "styled-components";
 import SvgSearch from "../../svg_components/Search";
 import SvgShoppingBag from "../../svg_components/ShoppingBag";
 import SvgUser from "../../svg_components/User";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const buttonStyles = css`
   fill: #dcdcdd;
@@ -57,4 +59,17 @@ export const ProfileIcon = styled(SvgUser)`
   fill: #dcdcdd;
   width: 2.1em;
   ${buttonStyles};
+`;
+
+export const LogoIcon = styled.div`
+  font-size: 2em;
+  color: black;
+  transition: all .2s;
+  &:hover{
+    color: white;
+    transform: scale(1.1) ;
+  }
+`;
+export const StyledLink = styled(Link)`
+  text-decoration: none;
 `;
