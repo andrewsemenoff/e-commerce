@@ -50,7 +50,7 @@ const SignUp = () => {
         <HorizontalBox>
           <h3>Sign up</h3>
           <Paragraph>
-            Already have an account? <MyLink to="/">Sign in</MyLink>
+            Already have an account? <MyLink to="/sign-in">Sign in</MyLink>
           </Paragraph>
         </HorizontalBox>
         <StyledForm onSubmit={handleSubmit}>

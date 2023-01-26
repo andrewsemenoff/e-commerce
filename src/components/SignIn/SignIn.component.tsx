@@ -38,7 +38,7 @@ const SignIn = () => {
           <h3>Sign in</h3>
           <Paragraph>
             {"Don't have an account?"}&nbsp;
-            <MyLink to="/">{"Sign Up"}</MyLink>
+            <MyLink to="/sign-up">{"Sign Up"}</MyLink>
           </Paragraph>
         </HorizontalBox>
         <StyledForm onSubmit={handleSubmit}>
@@ -70,7 +70,7 @@ const SignIn = () => {
             Login
           </SubmitBtn>
           <HorizontalBox align="center">
-            <MyLink to="/">Lost your password?</MyLink>
+            <MyLink to="/restore-pass">Lost your password?</MyLink>
           </HorizontalBox>
         </StyledForm>
       </SignBox>

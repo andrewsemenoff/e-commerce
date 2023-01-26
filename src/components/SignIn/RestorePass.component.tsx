@@ -45,7 +45,7 @@ const RestorePass = () => {
       <SignBox>
         <HorizontalBox>
           <h3>Restore Password</h3>
-          <MyLink to="/">Sign in</MyLink>
+          <MyLink to="/sign-in">Sign in</MyLink>
         </HorizontalBox>
         <StyledForm onSubmit={handleSubmit}>
           <TextField
