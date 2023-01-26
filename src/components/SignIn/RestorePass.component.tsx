@@ -1,6 +1,6 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { ButtonTypes } from "../CustomButton/CustomButton.component";
 import {
   HorizontalBox,
@@ -9,11 +9,23 @@ import {
   StyledForm,
   SubmitBtn,
 } from "./SignIn.style";
+import useEmailValidation from "../../customHooks/useEmailValidation";
 
 const theme = createTheme();
 
 const RestorePass = () => {
   const [mail, setMail] = useState("");
+  const { isValid, checkIsValid} = useEmailValidation();
+
+  const debounce = (callback: (...args: string[]) => void, delay: number =300) => {
+    let timeout: NodeJS.Timeout;
+    return (...args: string[]) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => callback(...args), delay);
+    };
+  };
+
+  const debouncedCheck = useMemo(()=>debounce(checkIsValid), []);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -25,6 +37,7 @@ const RestorePass = () => {
 
   const handleMailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMail(event.target.value);
+    debouncedCheck(event.target.value);
   };
 
   return (
@@ -46,7 +59,12 @@ const RestorePass = () => {
             autoFocus
             onChange={handleMailChange}
           />
-          <SubmitBtn isFullWidth type="submit" buttonType={ButtonTypes.BLUE}>
+          <SubmitBtn
+            isFullWidth={true}
+            type="submit"
+            buttonType={ButtonTypes.BLUE}
+            disabled={!isValid}
+          >
             Send
           </SubmitBtn>
         </StyledForm>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BaseButton = styled.button<{isFullWidth: boolean}>`
+export const BaseButton = styled.button<{isFullWidth: boolean, disabled?: boolean}>`
   pointer-events: ${(props) => (props.disabled ? "none" : null)};
   padding: 0.4em;
   height: fit-content;

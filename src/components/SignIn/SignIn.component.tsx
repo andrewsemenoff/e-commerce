@@ -3,12 +3,12 @@ import TextField from "@mui/material/TextField";
 import React, { useState } from "react";
 import { ButtonTypes } from "../CustomButton/CustomButton.component";
 import {
-    HorizontalBox,
-    MyLink,
-    Paragraph,
-    SignBox,
-    StyledForm,
-    SubmitBtn,
+  HorizontalBox,
+  MyLink,
+  Paragraph,
+  SignBox,
+  StyledForm,
+  SubmitBtn,
 } from "./SignIn.style";
 
 const theme = createTheme();
@@ -66,7 +66,7 @@ const SignIn = () => {
             autoComplete="current-password"
             onChange={handlePassChange}
           />
-          <SubmitBtn isFullWidth type="submit" buttonType={ButtonTypes.BLUE}>
+          <SubmitBtn disabled={false} isFullWidth={true} type="submit" buttonType={ButtonTypes.BLUE}>
             Login
           </SubmitBtn>
           <HorizontalBox align="center">

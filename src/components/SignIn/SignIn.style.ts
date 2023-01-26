@@ -5,7 +5,7 @@ import CustomButton from "../CustomButton/CustomButton.component";
 export const SignBox = styled.div`
   width: 30vw;
   margin: 3em auto;
-  padding: 1em;
+  padding: 1em; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,7 +14,9 @@ export const SignBox = styled.div`
   border: #1985a1 solid 2px;
 `;
 
-export const StyledForm = styled.form``;
+export const StyledForm = styled.form`
+width: 100%
+`;
 
 export const SubmitBtn = styled(CustomButton)`
   margin: 1em 0;

@@ -1,27 +1,24 @@
 import { ThemeProvider, createTheme } from "@mui/material";
+import { Route, Routes } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Footer from "./components/Footer/Footer.component";
 import LandingPageContent from "./components/LandingPageContent/LandingPageContent.component";
 import NavigationBar from "./components/NavigationBar/NavigationBar.component";
-import QuickShopSlider from "./components/QuickShopSlider/QuickShopSlider.component";
-import SubscribeBar from "./components/SubscribeBar/SubscribeBar.component";
 import Returns from "./components/Returns/Returns.component";
+import RestorePass from "./components/SignIn/RestorePass.component";
 import SignIn from "./components/SignIn/SignIn.component";
 import SignUp from "./components/SignIn/SignUp.component";
-import RestorePass from "./components/SignIn/RestorePass.component";
-
+import SubscribeBar from "./components/SubscribeBar/SubscribeBar.component";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#ffffff',
+      main: "#ffffff",
     },
-    secondary:
-    {
-      main: '#1985A1'
-    }
-
+    secondary: {
+      main: "#1985A1",
+    },
   },
 });
 function App() {
@@ -29,12 +26,13 @@ function App() {
     <ThemeProvider theme={theme}>
       <div>
         <NavigationBar />
-        <SignUp/>
-        <SignIn/>
-        <RestorePass/>
-        <Returns/>
-        <QuickShopSlider />
-        <LandingPageContent />
+        <Routes>
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/restore-pass" element={<RestorePass />} />
+          <Route path="/returns" element={<Returns />} />
+          <Route path="/landing" element={<LandingPageContent />} />
+        </Routes>
         <SubscribeBar />
         <Footer />
       </div>

@@ -98,7 +98,7 @@ const SignUp = () => {
             autoComplete="current-password"
             onChange={handlePassConfirmationChange}
           />
-          <SubmitBtn isFullWidth type="submit" buttonType={ButtonTypes.BLUE}>
+          <SubmitBtn isFullWidth={true} type="submit" buttonType={ButtonTypes.BLUE}>
             Sign up
           </SubmitBtn>
           <Paragraph>

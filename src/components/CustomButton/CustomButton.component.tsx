@@ -18,6 +18,7 @@ interface ButtonProps {
   buttonType?: ButtonTypes;
   type?: "button" | "submit" | "reset" | undefined;
   isFullWidth?: boolean;
+  disabled?: boolean;
 }
 
 const getButton = (buttonType: ButtonTypes = ButtonTypes.BASE) =>
@@ -33,11 +34,12 @@ const CustomButton: React.FC<ButtonProps> = ({
   isFullWidth=false,
   type,
   buttonType,
+  disabled,
   ...otherProps
 }) => {
   const StyledButton = getButton(buttonType);
   return (
-    <StyledButton isFullWidth={isFullWidth} type={type} {...otherProps}>
+    <StyledButton disabled={disabled} isFullWidth={isFullWidth} type={type} {...otherProps}>
       {children}
     </StyledButton>
   );
