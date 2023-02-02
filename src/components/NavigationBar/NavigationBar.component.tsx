@@ -1,5 +1,6 @@
 import { InputAdornment, MenuItem, TextField } from "@mui/material";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   CartBadge,
   CartIcon,
@@ -10,8 +11,6 @@ import {
   ProfileIcon,
   StyledLink,
 } from "./NavigationBar.style";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 const menuItems = ["Men", "Women", "Kids", "Sale", "Collections", "Blog"];
 const NavigationBar = () => {
@@ -25,12 +24,14 @@ const NavigationBar = () => {
   };
   return (
     <NavBar>
-      <StyledLink to='/landing'>
+      <StyledLink to="/landing">
         <LogoIcon>LOGO</LogoIcon>
       </StyledLink>
       <NavMenu>
         {menuItems.map((item, index) => (
-          <MenuItem key={index}>{item}</MenuItem>
+          <MenuItem onClick={() => navigate(`products/${item}`)} key={index}>
+            {item}
+          </MenuItem>
         ))}
       </NavMenu>
       <TextField

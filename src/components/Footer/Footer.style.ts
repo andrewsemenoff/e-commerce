@@ -34,7 +34,7 @@ export const SubItem = styled.div`
   font-size: 1em;
   color: #4c5c68;
   &:hover {
-    color: #1985a1;
+    color: <#1985a1>;
   }
 `;
 export const TitleItem = styled.div`

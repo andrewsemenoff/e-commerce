@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import SvgFacebook from "../../svg_components/Facebook";
 import {
   ContactFieldName,
@@ -30,18 +31,25 @@ const contact = {
   Address: "2464 Royal Ln. Mesa, New Jersey 45463",
 };
 const contactArr = Object.entries(contact);
+
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <FooterBar>
       <SiteMapList>
         <Logo>LOGO</Logo>
         {siteItems.map((arrItem, index) => (
           <SubList key={index}>
-            {arrItem.map((item, index) => {
+            {arrItem.map((item, index, arr) => {
               return index === 0 ? (
-                <TitleItem key={index}>{item}</TitleItem>
+                <TitleItem onClick={()=>navigate(`${item}`)} key={index}>{item}</TitleItem>
               ) : (
-                <SubItem key={index}>{item}</SubItem>
+                <SubItem
+                  onClick={() => navigate(`${arr[0]}/${item}`)}
+                  key={index}
+                >
+                  {item}
+                </SubItem>
               );
             })}
           </SubList>
