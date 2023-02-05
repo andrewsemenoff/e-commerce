@@ -2,5 +2,5 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     display: flex;
-    padding: 0 10%;
+    padding: 5% 10%;
 `

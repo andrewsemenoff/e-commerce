@@ -3,6 +3,7 @@ import SideProductMenu from "../components/SideProductMenu/SideProductMenu.compo
 import SubscribeBar from "../components/SubscribeBar/SubscribeBar.component";
 import ProductsGallery from "../components/ProductsGallery/ProductsGallery.component";
 import { Wrapper } from "./Products.style";
+import TopDropProductMenu from "../components/TopDropProductMenu/TopDropProductMenu.component";
 
 
 const productsImages = Array.from(
@@ -14,6 +15,7 @@ const productsImages = Array.from(
 const Products = () => {
   return (
     <div>
+      <TopDropProductMenu/>
       <Wrapper>
         <SideProductMenu />
         <ProductsGallery columns={3} products={productsImages} />
