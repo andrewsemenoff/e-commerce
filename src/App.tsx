@@ -9,8 +9,8 @@ import Returns from "./components/Returns/Returns.component";
 import RestorePass from "./components/SignIn/RestorePass.component";
 import SignIn from "./components/SignIn/SignIn.component";
 import SignUp from "./components/SignIn/SignUp.component";
-import SubscribeBar from "./components/SubscribeBar/SubscribeBar.component";
 import Products from "./pages/Products";
+import ProductOverview from "./pages/productOverview/ProductOverview.component";
 
 const theme = createTheme({
   palette: {
@@ -30,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/products">
             <Route index element={<Products/>}/>
+            <Route path="product_overview" element ={<ProductOverview/>}/>
             <Route path=":type"/>
           </Route>
           <Route path="/sign-in" element={<SignIn />} />
