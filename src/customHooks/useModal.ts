@@ -5,6 +5,6 @@ const useModal = () => {
   const toggleIsDisplayed = () => {
     setIsDisplayed(!isDisplayed);
   };
-  return [isDisplayed, toggleIsDisplayed];
+  return {isDisplayed, toggleIsDisplayed};
 };
 export default useModal;

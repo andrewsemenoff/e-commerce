@@ -29,7 +29,7 @@ const NavigationBar = () => {
       </StyledLink>
       <NavMenu>
         {menuItems.map((item, index) => (
-          <MenuItem onClick={() => navigate(`products/${item}`)} key={index}>
+          <MenuItem onClick={() => navigate(index<3?`products/${item}`:`${item}`)} key={index}>
             {item}
           </MenuItem>
         ))}

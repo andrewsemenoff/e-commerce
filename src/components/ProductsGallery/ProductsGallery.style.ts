@@ -9,7 +9,7 @@ export const GridWrapper = styled.div<GridProps>`
   width: 100%;
   display: grid;
   grid-template: ${({ rows = 3, columns = 4 }) =>
-    `repeat(${rows}, 1fr)/ repeat(${columns}, 1fr)`};
+    `repeat(${rows}, auto)/ repeat(${columns}, 1fr)`};
   gap: 2em;
 `;
 

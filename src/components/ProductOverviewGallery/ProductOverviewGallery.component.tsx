@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import useModal from "../../customHooks/useModal";
 import ProductSwiperModal from "../productSwiperModal/ProductSwiperModal.component";
 import {
@@ -12,13 +12,18 @@ interface Props {
 }
 
 const ProductOverviewGallery: React.FC<Props> = ({ photos }) => {
-  const [isSwiperModalDisplayed, setIsSwiperModalDisplayed] = useModal();
+  const {isDisplayed, toggleIsDisplayed} = useModal();
+  const [startSlide, setStartSlide] = useState(0);
+  const handlePhotoClick =(index: number)=>{
+    toggleIsDisplayed();
+    setStartSlide(index)
+  }
   return (
     <Wrapper>
       <ProductPhotosGrid>
-        {photos.map((photo, index) => <ProductPhoto src={photo} key={index}/>)}
+        {photos.map((photo, index) => <ProductPhoto onClick={()=>handlePhotoClick(index)} src={photo} key={index}/>)}
       </ProductPhotosGrid>
-      {true &&<ProductSwiperModal slides={photos}/>}
+      {isDisplayed && <ProductSwiperModal startSlide={startSlide} toggler = {toggleIsDisplayed} slides={photos}/>}
     </Wrapper>
   );
 };

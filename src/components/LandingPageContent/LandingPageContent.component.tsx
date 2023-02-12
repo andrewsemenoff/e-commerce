@@ -18,7 +18,7 @@ const LandingPageContent = () => {
       <QuickShopSlider />
       <LandingPageContentWrapper>
         <Title>New Arrivals</Title>
-        <ProductsGallery products={clothesImages} />
+        <ProductsGallery itemsPerPage={8} products={clothesImages} />
         <Title>Categories</Title>
         <Categories />
         <Title>Blog</Title>

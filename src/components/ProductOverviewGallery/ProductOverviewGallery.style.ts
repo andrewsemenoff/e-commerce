@@ -9,7 +9,6 @@ position: relative;
   width: 70%;
   height: 50em;
   display: flex;
-  margin: 5% 0% 5% 10%;
   justify-content: space-between;
   gap: 2em;
 `;

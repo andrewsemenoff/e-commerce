@@ -11,15 +11,17 @@ import {
     ProductPriceWrapper,
     RatingStarts
 } from "./ProductCard.style";
+import { useNavigate } from "react-router-dom";
 interface Props {
   src: string;
   alt?: string;
 }
 const ProductCard: React.FC<Props> = ({ src, alt }) => {
+  const navigate = useNavigate();
   const [rating, setRating] = useState<number | null>(2.5);
   const [hoverRating, setHoverRating] = useState(-1);
   return (
-    <CardContainer>
+    <CardContainer onClick={()=>navigate('/products/product_overview')}>
       <ImageWrapper>
         <ProductPhoto src={src} alt={alt} />
         <AddToCartBtn buttonType={ButtonTypes.ADD}>

@@ -9,8 +9,11 @@ import Returns from "./components/Returns/Returns.component";
 import RestorePass from "./components/SignIn/RestorePass.component";
 import SignIn from "./components/SignIn/SignIn.component";
 import SignUp from "./components/SignIn/SignUp.component";
-import Products from "./pages/Products";
-import ProductOverview from "./pages/productOverview/ProductOverview.component";
+import ProductOverview from "./pages/ProductOverview/ProductOverview.component";
+import Products from "./pages/Products/Products.component";
+import BlogPage from "./pages/BlogPage/BlogPage.component";
+import SubscribeBar from "./components/SubscribeBar/SubscribeBar.component";
+import ErrorPage from "./pages/ErrorPage/ErrorPage.component";
 
 const theme = createTheme({
   palette: {
@@ -30,14 +33,16 @@ function App() {
         <Routes>
           <Route path="/products">
             <Route index element={<Products/>}/>
+            <Route path=":type" element={<Products/>}/>
             <Route path="product_overview" element ={<ProductOverview/>}/>
-            <Route path=":type"/>
           </Route>
+          <Route path="/blog" element={<><BlogPage/><SubscribeBar/></>}/>
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/restore-pass" element={<RestorePass />} />
           <Route path="/returns" element={<Returns />} />
           <Route path="/landing" element={<LandingPageContent />} />
+          <Route path = '/*' element = {<ErrorPage/>}/>
         </Routes>
         <Footer />
       </div>

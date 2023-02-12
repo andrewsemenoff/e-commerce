@@ -1,6 +1,6 @@
 import ProductOverviewGallery from "../../components/ProductOverviewGallery/ProductOverviewGallery.component";
 import ProductSideBar from "../../components/productSideBar/ProductSideBar.component";
-import { ProductOverviewWrapper } from "./ProductOverview.style";
+import { Wrapper } from "./ProductOverview.style";
 
 const photos = Array.from(
   { length: 4 },
@@ -10,10 +10,10 @@ const photos = Array.from(
 
 const ProductOverview = () => {
   return (
-    <ProductOverviewWrapper>
+    <Wrapper>
       <ProductOverviewGallery photos={photos} />
       <ProductSideBar />
-    </ProductOverviewWrapper>
+    </Wrapper>
   );
 };
 

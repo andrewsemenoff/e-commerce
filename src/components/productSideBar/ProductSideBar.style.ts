@@ -51,7 +51,6 @@ export const SideBarWrapper = styled.div`
   gap: 1em;
   min-height: 30em;
   max-height: fit-content;
-  margin: 5% 10% 5% 0;
   padding: 3% 2%;
 `;
 

@@ -9,6 +9,7 @@ import {
 import { useState } from "react";
 import useListHook from "../../customHooks/useListHook";
 import { Title, Titles, VerticalFlex } from "./TopDropProductMene.style";
+import { useParams } from "react-router-dom";
 
 const categories = [
   "All",
@@ -54,7 +55,7 @@ const TopDropProductMenu = () => {
     useListHook(collections);
   const [BrandsList, currentBrand, setCurrentBrand] = useListHook(brands);
 
-  const gender = "women";
+ const {type} =  useParams();
 
   return (
     <div style={{ position: "absolute", zIndex: 10, width: "100%" }}>
@@ -66,7 +67,7 @@ const TopDropProductMenu = () => {
         >
           <MenuIcon style={{ margin: "0 2% 0 10%" }} />
           <Titles>
-            <Title>{gender}</Title>
+            <Title>{type??"All"}</Title>
             {currentCategory && <Title>{`/${currentCategory}`}</Title>}
             {currentCollection && <Title>{`/${currentCollection}`}</Title>}
             {currentBrand && <Title>{`/${currentBrand}`}</Title>}
