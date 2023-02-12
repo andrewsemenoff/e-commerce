@@ -87,7 +87,7 @@ const BlogPage = () => {
           <BlogPicture src={Sport47} />
         </PicturesWrapper>
         <HorizontalWrapper>
-          {mockBlogs.map((blogData, index) => (
+          {mockBlogs.slice(1,3).map((blogData, index) => (
             <BlogCard blogData={blogData} key={index} />
           ))}
         </HorizontalWrapper>

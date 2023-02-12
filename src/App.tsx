@@ -14,6 +14,7 @@ import Products from "./pages/Products/Products.component";
 import BlogPage from "./pages/BlogPage/BlogPage.component";
 import SubscribeBar from "./components/SubscribeBar/SubscribeBar.component";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.component";
+import BlogsListPage from "./pages/BlogsListPage/BlogsListPage.component";
 
 const theme = createTheme({
   palette: {
@@ -37,10 +38,11 @@ function App() {
             <Route path="product_overview" element ={<ProductOverview/>}/>
           </Route>
           <Route path="/blog" element={<><BlogPage/><SubscribeBar/></>}/>
+          <Route path='/blogs' element={<BlogsListPage/>}/>
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/restore-pass" element={<RestorePass />} />
-          <Route path="/returns" element={<Returns />} />
+          <Route path="/Order%20status/Returns" element={<Returns />} />
           <Route path="/landing" element={<LandingPageContent />} />
           <Route path = '/*' element = {<ErrorPage/>}/>
         </Routes>

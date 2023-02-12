@@ -10,7 +10,7 @@ import { format } from "date-fns";
 
 interface Props {
   blogData: {
-    picture: string;
+    picture?: string;
     title: string;
     timeStamp: number;
   };
@@ -21,7 +21,7 @@ const BlogCard: React.FC<Props> = ({ blogData }) => {
 const formattedDate = format(new Date(timeStamp), 'MM.dd.yyyy');
   return (
     <CardBox>
-      <BlogPicture src={picture}></BlogPicture>
+      {picture&&<BlogPicture src={picture}></BlogPicture>}
       <Title>{title}</Title>
       <PublishDate>
         <ClockIcon />

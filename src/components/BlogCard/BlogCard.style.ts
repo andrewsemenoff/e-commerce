@@ -8,14 +8,14 @@ export const CardBox = styled.div`
   border-radius: 0.5em;
   background-color: lightgrey;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  width: 50%;
+  width: 100%;
 `;
 
 export const Title = styled.div`
   line-height: 1.5em;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: 600;
-  margin: 2em 1em;
+  margin: 2em 1em 0;
 `;
 
 export const PublishDate = styled.div`
@@ -33,8 +33,8 @@ export const ClockIcon = styled(SvgClock)`
 
 export const BlogPicture = styled.div<{ src: string }>`
   width: 100%;
-  min-height: 20em;
-  max-height: 30em;
+  min-height: 15em;
+  max-height: 20em;
   border-radius: 0.5em;
   background-image: ${({ src }) => `url(${src})`};
   background-size: cover;

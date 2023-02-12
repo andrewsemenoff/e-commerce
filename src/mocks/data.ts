@@ -7,8 +7,13 @@ import shoes5 from "../images/running_shoes5.png";
 import shoes6 from "../images/running_shoes6.png";
 import shoes7 from "../images/running_shoes7.png";
 
+import blog1 from "../images/blog1.jpg";
+import blog2 from "../images/blog2.jpg";
 import blog3 from "../images/blog3.jpg";
 import blog4 from "../images/blog4.jpg";
+import blog5 from "../images/blog5.jpg";
+import blog6 from "../images/blog6.jpg";
+import blog7 from "../images/blog7.jpg";
 
 interface Product {
   id?: number;
@@ -19,7 +24,7 @@ interface Product {
   price: number;
 }
 
-const createBlog = (picture: string, title: string, timeStamp: number) => {
+const createBlog = ( title: string, timeStamp: number, picture?: string) => {
   return {
     picture,
     title,
@@ -94,4 +99,45 @@ export const mockProducts: Product[] = [
   },
 ];
 
-export const mockBlogs =   [createBlog(blog3, 'Workout From Home Routines: Tips and Best Practices',Date.parse("07.08.2020")), createBlog(blog4, 'Train The Way You Want: Energise Your Routine with our Growing Library of Workout', Date.parse("07.08.2020"))]
+export const mockBlogs = [
+  createBlog(
+    "Learning to love your mental health journey",
+    Date.parse("07.02.2023"),
+    blog1,
+  ),
+  createBlog(
+    "Workout From Home Routines: Tips and Best Practices",
+    Date.parse("07.08.2020"),
+    blog1,
+  ),
+  createBlog(
+    "Train The Way You Want: Energise Your Routine with our Growing Library of Workout",
+    Date.parse("07.08.2020"),
+    blog2,
+  ),
+  createBlog(
+    "Why our Training Club?",
+    Date.parse("07.08.2020"),
+    blog3,
+  ),
+  createBlog(
+    "17 Tips for Becoming Sportsmen",
+    Date.parse("07.08.2020"),
+    blog4,
+  ),
+  createBlog(
+    "Mental and Physical Health Benefits of Yoga: Proven Results",
+    Date.parse("07.08.2020"),
+    blog5,
+  ),
+  createBlog(
+    "Reach Your Fitness Goals with the our Training Club App (NTC).",
+    Date.parse("07.08.2020"),
+    blog6,
+  ),
+  createBlog(
+    "Reach Your Fitness Goals with the our Training Club App (NTC).",
+    Date.parse("07.08.2020"),
+    blog7,
+  ),
+];
