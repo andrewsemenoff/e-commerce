@@ -19,8 +19,8 @@ import {
   ProductTitle,
   SideBarWrapper,
 } from "./ProductSideBar.style";
+import { sizes } from "../../mocks/data";
 
-const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
 const colors = ["green", "black", "violet", "lightgreen", "darkblue", "purple"];
 
 function createProductKindObj(kind: string, photo: string) {

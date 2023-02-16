@@ -11,6 +11,7 @@ import {
   RadioGroup,
 } from "@mui/material";
 import { useState } from "react";
+import { sizes } from "../../mocks/data";
 
 const categories = [
   "All",
@@ -32,7 +33,6 @@ const prices = [
   "500$+",
 ];
 const brands = ["Levi's", "Jungmaven", "Sunspel", "Uniqlo", "Aime Leon Dore"];
-const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
 const seasons = ["Winter", "Spring", "Summer", "Autumn"];
 const styles = ["All styles", "A-Line", "Graphic T-Shirts"];
 const collections = ["first", "second", "third", "fourth"];

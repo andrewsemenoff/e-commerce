@@ -5,8 +5,14 @@ export const BlogsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, minmax(10em, fit-content));
+  gap: 1em;
+`;
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 5% 10%;
   gap: 1em;
+  align-items: center;
 `;
 
 export const TopDiv = styled.div`
@@ -40,7 +46,6 @@ export const ClockIcon = styled(SvgClock)`
   fill: black;
   width: 0.9em;
 `;
-
 
 export const PublishDate = styled.div`
   display: flex;

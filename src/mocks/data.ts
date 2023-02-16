@@ -15,6 +15,8 @@ import blog5 from "../images/blog5.jpg";
 import blog6 from "../images/blog6.jpg";
 import blog7 from "../images/blog7.jpg";
 
+export const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
+
 interface Product {
   id?: number;
   name: string;

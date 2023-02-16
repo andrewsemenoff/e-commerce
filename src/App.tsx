@@ -15,6 +15,7 @@ import BlogPage from "./pages/BlogPage/BlogPage.component";
 import SubscribeBar from "./components/SubscribeBar/SubscribeBar.component";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.component";
 import BlogsListPage from "./pages/BlogsListPage/BlogsListPage.component";
+import CartPage from "./pages/CartPage/CartPage.component";
 
 const theme = createTheme({
   palette: {
@@ -37,6 +38,7 @@ function App() {
             <Route path=":type" element={<Products/>}/>
             <Route path="product_overview" element ={<ProductOverview/>}/>
           </Route>
+          <Route path = "/cart" element = {<CartPage/>}/>
           <Route path="/blog" element={<><BlogPage/><SubscribeBar/></>}/>
           <Route path='/blogs' element={<BlogsListPage/>}/>
           <Route path="/sign-in" element={<SignIn />} />
